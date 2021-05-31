@@ -1,19 +1,16 @@
 import React from 'react';
 import { styled, Typography } from '@material-ui/core';
-import Sidebar from '../components/Sidebar';
-import Navbar from '../components/Navbar';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Offer from '../components/Offer';
-
+import PopularRides from '../components/PopularRides';
 const Home = () => {
   return (
     <Wrapper>
-      <Navbar />
       <Header />
       <Hero />
-
       <Offer />
+      <PopularRides />
     </Wrapper>
   );
 };

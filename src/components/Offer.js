@@ -70,6 +70,7 @@ const Ride = styled('div')({
   gap: '2rem 3.5rem',
   maxWidth: '968px',
   margin: '1rem auto',
+  marginBottom: 0,
 
   '@media (max-width: 980px)': {
     paddingLeft: '0px',

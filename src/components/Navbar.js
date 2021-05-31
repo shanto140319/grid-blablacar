@@ -2,12 +2,12 @@ import {
   Box,
   Button,
   Icon,
-  Link,
   styled,
   Toolbar,
   Typography,
 } from '@material-ui/core';
 import React, { useState } from 'react';
+import { Link, Route } from 'react-router-dom';
 
 //images
 import logo from '../images/logo.PNG';
@@ -138,13 +138,13 @@ const Navbar = () => {
         <Toolbar>
           <ul className={classes.navLinks}>
             <li>
-              <a href='/about' className={classes.link}>
+              <a href='/offer' className={classes.link}>
                 <FiSearch />
                 Find a ride
               </a>
             </li>
             <li>
-              <Link to='/about' className={classes.link}>
+              <Link to='/offer' className={classes.link}>
                 <AiOutlinePlusCircle />
                 Offer a ride
               </Link>
