@@ -1,36 +1,10 @@
 import React from 'react';
-import { Box, Button, styled, Typography } from '@material-ui/core';
+import { Box, Button, Typography } from '@material-ui/core';
 
-import { makeStyles } from '@material-ui/core/styles';
 import Map from '../components/Map';
-
-const useStyles = makeStyles((theme) => ({
-  container: {
-    padding: '1rem 2rem',
-    '& h1': {
-      textAlign: 'center',
-      fontSize: 37,
-    },
-  },
-
-  continueButton: {
-    marginTop: '8px',
-    backgroundColor: 'rgb(0, 175, 245)',
-    color: '#fff',
-    padding: '0px 24px',
-    border: '1px solid transparent',
-    borderRadius: '48px',
-    fontSize: '16px',
-    fontWeight: 600,
-    fontFamily: 'inherit',
-    height: '48px',
-    minWidth: '48px',
-
-    '&:hover': {
-      backgroundColor: '#008fc1',
-    },
-  },
-}));
+//styles
+import { Wrapper, useStyles } from '../css/chooseRoute';
+import { Link } from 'react-router-dom';
 const ChooseRoute = () => {
   const classes = useStyles();
   return (
@@ -43,12 +17,9 @@ const ChooseRoute = () => {
           justifyContent='center'
           style={{ width: '100%', marginTop: '32px' }}
         >
-          <Button
-            href='/offer/choose-your-route'
-            className={classes.continueButton}
-          >
-            Continue
-          </Button>
+          <Link to='/offer/choose-your-route'>
+            <Button className={classes.continueButton}>Continue</Button>
+          </Link>
         </Box>
       </Box>
       <Box className={classes.map}>
@@ -57,10 +28,5 @@ const ChooseRoute = () => {
     </Wrapper>
   );
 };
-const Wrapper = styled('section')({
-  display: 'grid',
-  '@media (min-width : 800px)': {
-    gridTemplateColumns: '1fr 1fr',
-  },
-});
+
 export default ChooseRoute;

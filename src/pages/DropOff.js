@@ -4,6 +4,7 @@ import { Box, Button, styled, Typography } from '@material-ui/core';
 import { FiSearch } from 'react-icons/fi';
 //styles
 import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -36,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   button: {
     backgroundColor: 'transparent',
     color: 'rgb(112, 140, 145)',
-    height: 'auto',
+    height: '100%',
     '& svg': {
       fontSize: 20,
     },
@@ -68,9 +69,11 @@ const DroffOff = () => {
       <Box className={classes.container}>
         <Typography variant='h1'>Drop-off</Typography>
         <Box className={classes.wrapper}>
-          <Button href='/offer/arrival-precise' className={classes.button}>
-            <FiSearch />
-          </Button>
+          <Link to='/offer/arrival-precise'>
+            <Button className={classes.button}>
+              <FiSearch />
+            </Button>
+          </Link>
           <input
             className={classes.input}
             type='search'

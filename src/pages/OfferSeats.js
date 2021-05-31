@@ -5,6 +5,7 @@ import { FiSearch } from 'react-icons/fi';
 
 //styles
 import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -33,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
     height: 55,
     width: '93%',
     margin: '0 auto',
+    alignItems: 'center',
   },
   button: {
     backgroundColor: 'transparent',
@@ -40,6 +42,9 @@ const useStyles = makeStyles((theme) => ({
     height: 'auto',
     '& svg': {
       fontSize: 20,
+    },
+    '&:hover': {
+      backgroundColor: 'transparent',
     },
   },
   input: {
@@ -69,9 +74,12 @@ const OfferSeats = () => {
       <Box className={classes.container}>
         <Typography variant='h1'>Pick-up</Typography>
         <Box className={classes.wrapper}>
-          <Button href='/offer/departure-precise' className={classes.button}>
-            <FiSearch />
-          </Button>
+          <Link to='/offer/departure-precise'>
+            <Button className={classes.button}>
+              <FiSearch />
+            </Button>
+          </Link>
+
           <input
             className={classes.input}
             type='search'

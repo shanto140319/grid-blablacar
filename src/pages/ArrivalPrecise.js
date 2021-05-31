@@ -9,6 +9,7 @@ import { BiChevronLeft } from 'react-icons/bi';
 
 //styles
 import { Wrapper, useStyles } from './../css/arrivalPrecise';
+import { Link } from 'react-router-dom';
 const ArrivalPrecise = () => {
   const classes = useStyles();
   const [modal, setModal] = useState(false);
@@ -25,9 +26,11 @@ const ArrivalPrecise = () => {
         </Button>
         {modal && <Modal setModal={setModal} />}
         <Box className={classes.wrapper}>
-          <Button href='/offer/arrival' className={classes.button}>
-            <BiChevronLeft />
-          </Button>
+          <Link to='/offer/arrival'>
+            <Button className={classes.button}>
+              <BiChevronLeft />
+            </Button>
+          </Link>
           <input
             className={classes.input}
             type='search'
@@ -39,12 +42,9 @@ const ArrivalPrecise = () => {
           justifyContent='center'
           style={{ width: '100%', marginTop: '32px' }}
         >
-          <Button
-            href='/offer/choose-your-route'
-            className={classes.continueButton}
-          >
-            Continue
-          </Button>
+          <Link to='/offer/choose-your-route'>
+            <Button className={classes.continueButton}>Continue</Button>
+          </Link>
         </Box>
       </Box>
       <Box className={classes.map}>

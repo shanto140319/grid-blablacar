@@ -51,7 +51,7 @@ export const useStyles = makeStyles((theme) => ({
   button: {
     backgroundColor: 'transparent',
     color: 'rgb(112, 140, 145)',
-    height: 'auto',
+    height: '100%',
     '& svg': {
       fontSize: 20,
     },

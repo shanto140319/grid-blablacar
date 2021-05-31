@@ -1,13 +1,13 @@
 import { Box, Button, styled, Typography } from '@material-ui/core';
 import React, { useState } from 'react';
-
+import Map from '../components/Map';
+import Modal from '../components/Modal';
 //icons
 import { BsQuestionCircle } from 'react-icons/bs';
 import { BiChevronLeft } from 'react-icons/bi';
 //styles
 import { makeStyles } from '@material-ui/core/styles';
-import Map from '../components/Map';
-import Modal from '../components/Modal';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
   button: {
     backgroundColor: 'transparent',
     color: 'rgb(112, 140, 145)',
-    height: 'auto',
+    height: '100%',
     '& svg': {
       fontSize: 20,
     },
@@ -112,9 +112,12 @@ const DeparturePrecise = () => {
         </Button>
         {modal && <Modal setModal={setModal} />}
         <Box className={classes.wrapper}>
-          <Button href='/offer' className={classes.button}>
-            <BiChevronLeft />
-          </Button>
+          <Link to='/offer'>
+            <Button className={classes.button}>
+              <BiChevronLeft />
+            </Button>
+          </Link>
+
           <input
             className={classes.input}
             type='search'
@@ -126,9 +129,9 @@ const DeparturePrecise = () => {
           justifyContent='center'
           style={{ width: '100%', marginTop: '32px' }}
         >
-          <Button href='/offer/arrival' className={classes.continueButton}>
-            Continue
-          </Button>
+          <Link to='/offer/arrival'>
+            <Button className={classes.continueButton}>Continue</Button>
+          </Link>
         </Box>
       </Box>
       <Box className={classes.map}>

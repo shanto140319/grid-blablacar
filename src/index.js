@@ -39,7 +39,7 @@ const muiTheme = createMuiTheme({
       fontSize: '32px',
       color: 'rgb(5, 71, 82)',
       textTransform: 'normal',
-      fontWeight: 500,
+      fontWeight: 800,
       fontFamily: 'Mulish',
     },
 
@@ -47,7 +47,7 @@ const muiTheme = createMuiTheme({
       fontSize: '22px',
       color: 'rgb(5, 71, 82)',
       textTransform: 'normal',
-      fontWeight: 600,
+      fontWeight: 800,
       fontFamily: 'Mulish',
     },
     h5: {
