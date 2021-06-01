@@ -1,10 +1,10 @@
 import React from 'react';
 import { Box, Button, styled, Typography } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 //icons
 import { FiSearch } from 'react-icons/fi';
 //styles
 import { makeStyles } from '@material-ui/core/styles';
-import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   container: {

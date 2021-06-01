@@ -2,14 +2,14 @@ import { Box, Button, Typography } from '@material-ui/core';
 import React, { useState } from 'react';
 import Modal from '../components/Modal';
 import Map from '../components/Map';
-
+import { Link } from 'react-router-dom';
 //icons
 import { BsQuestionCircle } from 'react-icons/bs';
 import { BiChevronLeft } from 'react-icons/bi';
 
 //styles
 import { Wrapper, useStyles } from './../css/arrivalPrecise';
-import { Link } from 'react-router-dom';
+
 const ArrivalPrecise = () => {
   const classes = useStyles();
   const [modal, setModal] = useState(false);

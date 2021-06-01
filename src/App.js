@@ -7,6 +7,17 @@ import DeparturePrecise from './pages/DeparturePrecise';
 import DropOff from './pages/DropOff';
 import ArrivalPrecise from './pages/ArrivalPrecise';
 import ChooseRoute from './pages/ChooseRoute';
+import DeclaredStopover from './pages/DeclaredStopover';
+import DeaprtureDate from './pages/DeaprtureDate';
+import DepartureTime from './pages/DepartureTime';
+import Comfort from './pages/Comfort';
+import Seats from './pages/Seats';
+import Approval from './pages/Approval';
+import PriceRecomandation from './pages/PriceRecomandation';
+import PriceSetting from './pages/PriceSeting';
+import ProfilePic from './pages/ProfilePic';
+import ReturnTrip from './pages/ReturnTrip';
+import Comment from './pages/Comment';
 
 function App() {
   return (
@@ -30,6 +41,39 @@ function App() {
         </Route>
         <Route exact path='/offer/choose-your-route'>
           <ChooseRoute />
+        </Route>
+        <Route exact path='/offer/declared-stopovers'>
+          <DeclaredStopover />
+        </Route>
+        <Route exact path='/offer/departure-date'>
+          <DeaprtureDate />
+        </Route>
+        <Route exact path='/offer/departure-time'>
+          <DepartureTime />
+        </Route>
+        <Route exact path='/offer/comfort'>
+          <Comfort />
+        </Route>
+        <Route exact path='/offer/seats'>
+          <Seats />
+        </Route>
+        <Route exact path='/offer/approval'>
+          <Approval />
+        </Route>
+        <Route exact path='/offer/price-recomandation'>
+          <PriceRecomandation />
+        </Route>
+        <Route exact path='/offer/price-setting'>
+          <PriceSetting />
+        </Route>
+        <Route exact path='/offer/profile-picture'>
+          <ProfilePic />
+        </Route>
+        <Route exact path='/offer/return-trip'>
+          <ReturnTrip />
+        </Route>
+        <Route exact path='/offer/comment'>
+          <Comment />
         </Route>
       </Switch>
     </Router>

@@ -1,7 +1,7 @@
 import { makeStyles, styled } from '@material-ui/core';
 export const useStyles = makeStyles((theme) => ({
   container: {
-    padding: '1rem 2rem',
+    marginBottom: '2rem',
     '& h1': {
       textAlign: 'center',
       fontSize: 37,
@@ -23,6 +23,47 @@ export const useStyles = makeStyles((theme) => ({
 
     '&:hover': {
       backgroundColor: '#008fc1',
+    },
+  },
+
+  route: {
+    marginTop: '2rem',
+    borderBottom: '1px solid #ddd',
+  },
+  single: {
+    padding: '0 2rem',
+    cursor: 'pointer',
+    border: '3px solid transparent',
+    position: 'relative',
+    display: 'flex',
+    paddingTop: '16px',
+    paddingBottom: '16px',
+    alignItems: 'center',
+    border: '0px',
+    background: 'none',
+    width: '100%',
+    justifyContent: 'space-between',
+    '&:hover': {
+      backgroundColor: '#ededed',
+    },
+  },
+  text: {
+    color: 'rgb(5, 71, 82)',
+    fontSize: '18px',
+    lineHeight: '20px',
+  },
+  tolls: {
+    display: 'block',
+    marginTop: '.2rem',
+    color: 'rgb(112, 140, 145)',
+    fontSize: '16px',
+  },
+  radio: {
+    '& input': {
+      fill: 'rgb(0, 175, 245)',
+      height: 24,
+      width: 24,
+      cursor: 'pointer',
     },
   },
 }));
