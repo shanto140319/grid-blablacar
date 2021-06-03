@@ -195,7 +195,7 @@ const Nav = styled.div`
   align-items: center;
   opacity: 0;
   visibility: hidden;
-
+  overflow: hidden;
   @media (min-width: 900px) {
     opacity: 1;
     visibility: visible;

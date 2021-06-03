@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 //images
-import logo from '../images/logo.PNG';
+import mobilelogo from '../images/mobilelogo.PNG';
 
 //icons
 import { FiSearch } from 'react-icons/fi';
@@ -53,8 +53,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   user: {
-    width: '48px!important',
-    height: '48px!important',
+    width: '45px!important',
+    height: '45px!important',
     color: '#DDDDDD!important',
     marginRight: '16px',
   },
@@ -64,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
     left: 'auto',
     right: 'auto',
     top: 0,
-    float: 'right',
+    float: 'left',
     position: 'relative',
     zIndex: 2,
     bottom: '0px',
@@ -93,7 +93,7 @@ const useStyles = makeStyles((theme) => ({
       alignItems: 'center',
       justifyContent: 'space-between',
       '& svg': {
-        fontSize: 25,
+        fontSize: 30,
         color: 'rgb(112, 140, 145)',
       },
     },
@@ -123,15 +123,65 @@ const NavMobile = () => {
         justifyContent='space-between'
         style={{ width: '100%' }}
       >
-        <Button
-          disableRipple
-          className={classes.userbtn}
-          onClick={() => setUser(!user)}
-        >
-          <FaUserCircle className={classes.user} />
-          {user ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
-        </Button>
+        <Box>
+          <Button
+            disableRipple
+            className={classes.userbtn}
+            onClick={() => setUser(!user)}
+          >
+            <FaUserCircle className={classes.user} />
+            {user ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
+          </Button>
+        </Box>
+        <Box>
+          <Toolbar>
+            <a href='/'>
+              <img src={mobilelogo} className={classes.logo} alt='' />
+            </a>
+          </Toolbar>
+        </Box>
+        <Toolbar>
+          <ul className={classes.navLinks}>
+            <li>
+              <a href='/offer' className={classes.link}>
+                <FiSearch />
+              </a>
+            </li>
+            <li>
+              <Link to='/offer' className={classes.link}>
+                <AiOutlinePlusCircle />
+              </Link>
+            </li>
+          </ul>
+        </Toolbar>
       </Box>
+
+      <Aside className={user && classes.show}>
+        <Box
+          className={
+            user ? `${classes.content} ${classes.contentShow}` : classes.content
+          }
+        >
+          <ul className={classes.menu}>
+            <li className={classes.list}>
+              <a href='#' type='button'>
+                <span>Log in</span>
+                <span>
+                  <BiChevronRight />{' '}
+                </span>
+              </a>
+            </li>
+            <li className={classes.list}>
+              <a href='#' type='button'>
+                <span>Sign up</span>
+                <span>
+                  <BiChevronRight />{' '}
+                </span>
+              </a>
+            </li>
+          </ul>
+        </Box>
+      </Aside>
     </Nav>
   );
 };
@@ -149,4 +199,14 @@ const Nav = styled.div`
     display: none;
   }
 `;
+const Aside = styled('aside')({
+  inset: ' 72px auto 0px 50%',
+  width: '100%',
+  position: 'fixed',
+  transform: 'translate(-50%, 0px)',
+  backgroundColor: 'rgba(0,0,0,.05)',
+  visibility: 'hidden',
+  // transitionDelay: '200ms',
+  // transitionProperty: 'visibility',
+});
 export default NavMobile;

@@ -118,10 +118,15 @@ const Wrapper = styled('div')({
   backgroundColor: 'rgb(255, 255, 255)',
   boxShadow: 'rgb(0 0 0 / 16%) 0px 1pt 4pt, rgb(0 0 0 / 8%) 0px 2pt 8pt',
   borderRadius: '16px',
-  Height: '56px',
+  height: 'auto',
   display: 'flex',
   '-webkit-box-align': 'center',
   alignItems: 'center',
+  justifyContent: 'center',
   position: 'relative',
+  gap: '2rem 0',
+  '@media (max-width : 900px)': {
+    flexWrap: 'wrap',
+  },
 });
 export default Destination;

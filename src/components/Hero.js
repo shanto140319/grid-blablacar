@@ -6,12 +6,12 @@ import { makeStyles } from '@material-ui/core/styles';
 import Destination from './Destination';
 
 const useStyles = makeStyles((theme) => ({
-  absolute: {
-    position: 'absolute',
-    bottom: '5%',
-    left: '50%',
-    transform: 'translateX(-50%)',
-    zIndex: 2,
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '8rem',
+    alignItems: 'center',
+    padding: '1.5rem',
   },
 }));
 
@@ -19,21 +19,23 @@ const Hero = () => {
   const classes = useStyles();
   return (
     <HeroSection>
-      <Typography variant='h2'>Your ride. Your choice.</Typography>
-      <Box className={classes.absolute}>
-        <Destination />
+      <Box className={classes.container}>
+        <Typography variant='h2'>Your ride. Your choice.</Typography>
+        <Box>
+          <Destination />
+        </Box>
       </Box>
     </HeroSection>
   );
 };
 const HeroSection = styled('div')({
   backgroundImage: `url(${bg})`,
-  height: '45vh',
+  minHeight: '45vh',
   Width: '100%',
+
   backgroundSize: 'cover',
   backgroundPosition: 'center center',
-  display: 'flex',
-  justifyContent: 'center',
+
   position: 'relative',
   '& h2': {
     color: '#fff',

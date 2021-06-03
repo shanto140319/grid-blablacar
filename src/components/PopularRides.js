@@ -123,5 +123,6 @@ const Section = styled('section')({
   backgroundColor: 'rgb(5, 71, 82)',
   color: '#fff',
   minHeight: 215,
+  marginTop: '2rem',
 });
 export default PopularRides;
