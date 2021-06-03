@@ -78,7 +78,7 @@ const DeclaredStopover = () => {
           justifyContent='center'
           style={{ marginTop: '2rem' }}
         >
-          <Link to='/offer/departure-time'>
+          <Link to='/offer/departure-date'>
             <ButtonComponent />
           </Link>
         </Box>

@@ -1,6 +1,8 @@
 import { Box, styled, Typography } from '@material-ui/core';
 import React from 'react';
-import TextField from '@material-ui/core/TextField';
+import ButtonComponent from '../components/ButtonComponent';
+
+import { Link } from 'react-router-dom';
 // import AdapterDateFns from '@material-ui/lab/AdapterDateFns';
 // import LocalizationProvider from '@material-ui/lab/LocalizationProvider';
 // import StaticDatePicker from '@material-ui/lab/StaticDatePicker';
@@ -45,6 +47,12 @@ const DeaprtureDate = () => {
           renderInput={(params) => <TextField {...params} />}
         />
       </LocalizationProvider> */}
+
+      <Box display='flex' justifyContent='center' style={{ marginTop: '1rem' }}>
+        <Link to='/offer/departure-time'>
+          <ButtonComponent />
+        </Link>
+      </Box>
     </Wrapper>
   );
 };

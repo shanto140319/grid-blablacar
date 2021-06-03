@@ -18,11 +18,13 @@ import PriceSetting from './pages/PriceSeting';
 import ProfilePic from './pages/ProfilePic';
 import ReturnTrip from './pages/ReturnTrip';
 import Comment from './pages/Comment';
+import NavMobile from './components/NavMobile';
 
 function App() {
   return (
     <Router>
       <Navbar />
+      <NavMobile />
       <Switch>
         <Route exact path='/'>
           <Home />

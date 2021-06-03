@@ -108,7 +108,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Navbar = () => {
+const NavMobile = () => {
   const classes = useStyles();
   const [user, setUser] = useState(false);
   if (user) {
@@ -116,7 +116,6 @@ const Navbar = () => {
   } else {
     document.body.classList.remove('fixScroll');
   }
-
   return (
     <Nav>
       <Box
@@ -124,93 +123,30 @@ const Navbar = () => {
         justifyContent='space-between'
         style={{ width: '100%' }}
       >
-        <Toolbar>
-          <a href='/'>
-            <img src={logo} className={classes.logo} alt='' />
-          </a>
-        </Toolbar>
-        <Toolbar>
-          <ul className={classes.navLinks}>
-            <li>
-              <a href='/offer' className={classes.link}>
-                <FiSearch />
-                Find a ride
-              </a>
-            </li>
-            <li>
-              <Link to='/offer' className={classes.link}>
-                <AiOutlinePlusCircle />
-                Offer a ride
-              </Link>
-            </li>
-            <li>
-              <Button
-                disableRipple
-                className={classes.userbtn}
-                onClick={() => setUser(!user)}
-              >
-                <FaUserCircle className={classes.user} />
-                {user ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
-              </Button>
-            </li>
-          </ul>
-        </Toolbar>
-      </Box>
-      <Aside className={user && classes.show}>
-        <Box
-          className={
-            user ? `${classes.content} ${classes.contentShow}` : classes.content
-          }
+        <Button
+          disableRipple
+          className={classes.userbtn}
+          onClick={() => setUser(!user)}
         >
-          <ul className={classes.menu}>
-            <li className={classes.list}>
-              <a href='#' type='button'>
-                <span>Log in</span>
-                <span>
-                  <BiChevronRight />{' '}
-                </span>
-              </a>
-            </li>
-            <li className={classes.list}>
-              <a href='#' type='button'>
-                <span>Sign up</span>
-                <span>
-                  <BiChevronRight />{' '}
-                </span>
-              </a>
-            </li>
-          </ul>
-        </Box>
-      </Aside>
+          <FaUserCircle className={classes.user} />
+          {user ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
+        </Button>
+      </Box>
     </Nav>
   );
 };
+
 const Nav = styled.div`
-  height: 0px;
+  height: 72px;
   padding: 0px 15px;
   z-index: 999;
   width: 100%;
   background-color: rgb(255, 255, 255);
   display: flex;
   align-items: center;
-  opacity: 0;
-  visibility: hidden;
-
+  top: 0px;
   @media (min-width: 900px) {
-    opacity: 1;
-    visibility: visible;
-    height: 72px;
+    display: none;
   }
 `;
-
-const Aside = styled('aside')({
-  inset: ' 72px auto 0px 50%',
-  width: '100%',
-  position: 'fixed',
-  transform: 'translate(-50%, 0px)',
-  backgroundColor: 'rgba(0,0,0,.05)',
-  visibility: 'hidden',
-  // transitionDelay: '200ms',
-  // transitionProperty: 'visibility',
-});
-export default Navbar;
+export default NavMobile;

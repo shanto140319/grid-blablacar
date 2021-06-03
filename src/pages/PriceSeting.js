@@ -1,5 +1,8 @@
 import { Box, Button, Typography } from '@material-ui/core';
 import React from 'react';
+import { Link } from 'react-router-dom';
+import ButtonComponent from '../components/ButtonComponent';
+import { useState } from 'react';
 
 //icons
 import { FiMinusCircle } from 'react-icons/fi';
@@ -7,9 +10,6 @@ import { BsPlusCircle } from 'react-icons/bs';
 
 //styles
 import { makeStyles } from '@material-ui/core/styles';
-import { Link } from 'react-router-dom';
-import ButtonComponent from '../components/ButtonComponent';
-import { useState } from 'react';
 
 const useStyles = makeStyles((theme) => ({
   container: {
